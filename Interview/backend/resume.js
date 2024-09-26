@@ -3,6 +3,7 @@ const multer = require("multer");
 const pdfParse = require("pdf-parse");
 const cors = require("cors");
 const path = require("path");
+const router = express.Router();
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
@@ -16,7 +17,7 @@ app.use(cors()); // Enable CORS for cross-origin requests
 const upload = multer({ dest: "uploads/" });
 
 // Upload endpoint
-app.post("/upload", upload.single("resume"), async (req, res) => {
+router.post("/upload", upload.single("resume"), async (req, res) => {
   if (!req.file) {
     return res.status(400).send("No file uploaded.");
   }
@@ -120,20 +121,70 @@ function cleanSkillsText(skillsText) {
 }
 
 // Function to generate interview questions based on skills
+// async function generateInterviewQuestions(skills) {
+//     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+//     const questions = {};
+
+//     for (const skill of skills) {
+//         // Create a prompt for generating interview questions
+//         const prompt = `Generate at least twenty interview questions for the skill: ${skill}. The questions should be suitable for both beginners and advanced levels also for Experienced also give suitable answers for each questions.`;
+
+//         try {
+//             const result = await model.generateContent(prompt);
+//             const response = await result.response.text();
+//             questions[skill] = response.split('\n').filter(question => question.trim() !== '');
+//         } catch (error) {
+//             console.error(`Error generating questions for ${skill}:`, error);
+//         }
+//     }
+
+//     return questions;
+// }
+
+// async function generateInterviewQuestions(skills) {
+//     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+//     const questions = {};
+
+//     for (const skill of skills) {
+//         const prompt = `Generate at least 20 interview questions for the skill ${skill}. Include questions suitable for beginners, advanced professionals, and experienced candidates. Additionally, provide appropriate answers for each question.`
+
+//         try {
+//             const result = await model.generateContent(prompt);
+//             const response = await result.response.text();
+
+//             // Split response into questions and answers and structure the output
+//             const questionAnswerPairs = response.split('\n\n').map((pair) => {
+//                 const [question, answer] = pair.split('\nAnswer:');
+//                 return { question: question.trim(), answer: answer ? answer.trim() : 'No answer available' };
+//             });
+
+//             questions[skill] = questionAnswerPairs;
+//         } catch (error) {
+//             console.error(`Error generating questions for ${skill}:`, error);
+//         }
+//     }
+
+//     return questions;
+// }
+
 async function generateInterviewQuestions(skills) {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   const questions = {};
 
   for (const skill of skills) {
-    // Create a prompt for generating interview questions
-    const prompt = `Generate at least twenty interview questions for the skill: ${skill}. The questions should be suitable for both beginners and advanced levels also for Experienced also give suitable answers for each questions.`;
+    const prompt = `Generate at least twenty interview questions for the skill: ${skill}. The questions should be suitable for both beginners and advanced levels also for Experienced also give suitable answers for each questions and while displaying answers display them below the questions.`;
 
     try {
       const result = await model.generateContent(prompt);
       const response = await result.response.text();
-      questions[skill] = response
-        .split("\n")
-        .filter((question) => question.trim() !== "");
+
+      // Split response into questions and answers and structure the output
+      const questionAnswerPairs = response.split("\n\n").map((pair) => {
+        const [question, answer] = pair.split("\nAnswer:");
+        return { question: question.trim(), answer: answer };
+      });
+
+      questions[skill] = questionAnswerPairs;
     } catch (error) {
       console.error(`Error generating questions for ${skill}:`, error);
     }
@@ -142,6 +193,4 @@ async function generateInterviewQuestions(skills) {
   return questions;
 }
 
-// Start server
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = router;
