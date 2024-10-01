@@ -419,7 +419,6 @@
 
 // export default App
 
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
@@ -427,9 +426,10 @@ import Home from './components/Home';
 import About from './components/About';
 import Resume from './components/Resume';
 import DSA from './components/DSA';
-// import Career from './pages/Career';
-import './index.css'
+import Signup from './components/Signup'; // Ensure this path is correct
+import Login from './components/Login'; // Ensure this path is correct
 import Contact from './components/Contact';
+import './index.css';
 
 const App = () => {
   return (
@@ -440,8 +440,9 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/dsa" element={<DSA />} />
-           
-              <Route path="/contact" element={<Contact/>}/>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
