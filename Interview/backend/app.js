@@ -1,20 +1,24 @@
 const express = require("express");
+const app = express();
 const resumeRoutes = require("./resume");
 const dsaRoutes = require("./dsa");
+const codeRoutes = require("./code");
+const allRoutes = require("./all");
+const editorRoutes = require("./codeEditor");
+const bodyParser = require("body-parser");
+
 const cors = require("cors");
-const userRouter = require("./routes/user.routes.js");
-const authRouter = require("./routes/auth.routes.js");
-const connectoDB = require("./dbConnect.js");
-const app = express();
+app.use(bodyParser.json());
 
 app.use(express.json());
 app.use(cors());
 app.use("/resume", resumeRoutes);
 app.use("/dsa", dsaRoutes);
-app.use("/api/users", userRouter);
-app.use("/auth", authRouter);
+app.use("/code", codeRoutes);
+app.use("/all", allRoutes);
+app.use("/editor", editorRoutes);
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

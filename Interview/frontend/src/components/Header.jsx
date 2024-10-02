@@ -11,13 +11,13 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white shadow-lg py-3 fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <header className="bg-gradient-to-r bg-[#093a3e] text-white shadow-lg py-3 fixed top-0 left-0 w-full z-50 transition-all duration-500">
       <div className="container mx-auto flex justify-between items-center px-4 md:px-8">
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
           <div className="text-3xl font-extrabold tracking-wide">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-yellow-400">
-              Interview
+            <span className="bg-clip-text text-transparent bg-gradient-to-r text-white">
+              InterviewPrep
             </span>
           </div>
         </div>
@@ -26,7 +26,7 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8 text-lg font-medium">
           <Link
             to="/"
-            className="relative text-white hover:text-yellow-300 transition duration-300 group"
+            className="relative text-white hover:text-black transition duration-300 group"
           >
             Home
             <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
@@ -52,6 +52,29 @@ const Header = () => {
             DSA
             <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
           </Link>
+          
+          <Link
+            to="/all"
+            className="relative text-white hover:text-yellow-300 transition duration-300 group"
+          >
+          All
+            <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link
+            to="/code"
+            onClick={toggleMenu}
+            className="block text-lg hover:text-indigo-500 transition duration-300"
+          >
+            Code
+          </Link>
+
+          <Link
+            to="/editor"
+            onClick={toggleMenu}
+            className="block text-lg hover:text-indigo-500 transition duration-300"
+          >
+         Code Editor
+          </Link>
           <Link
             to="/contact"
             className="relative text-white hover:text-yellow-300 transition duration-300 group bg-green-500 px-4 py-2 rounded-full"
@@ -60,7 +83,7 @@ const Header = () => {
           </Link>
           <Link
             to="/signup"
-            className="relative text-white hover:text-yellow-300 transition duration-300 group bg-green-500 px-4 py-2 rounded-full"
+            className="relative text-white hover:text-black transition duration-300 group bg-pink-500 px-4 py-2 rounded-full"
           >
            Signup   </Link>
           {/* <Link
@@ -114,6 +137,29 @@ const Header = () => {
          className="block text-lg hover:text-indigo-500 transition duration-300"
           >
             DSA
+          </Link>
+          
+          <Link
+            to="/all"
+            className="relative text-white hover:text-yellow-300 transition duration-300 group"
+          >
+          All
+            <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
+          </Link>
+          <Link
+            to="/code"
+            onClick={toggleMenu}
+            className="block text-lg hover:text-indigo-500 transition duration-300"
+          >
+            Code
+          </Link>
+
+          <Link
+            to="/editor"
+            onClick={toggleMenu}
+            className="block text-lg hover:text-indigo-500 transition duration-300"
+          >
+         Code Editor
           </Link>
           <Link
             to="/contact"

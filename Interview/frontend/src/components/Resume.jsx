@@ -7,6 +7,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import LoadingResume from '../pages/LoadingResume';
+import { Link } from 'react-router-dom';
 
 function Resume() {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -29,7 +30,7 @@ function Resume() {
 
         try {
             setLoading(true);
-            const response = await axios.post('http://localhost:5001/resume/upload', formData, {
+            const response = await axios.post('http://localhost:5000/resume/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -66,10 +67,11 @@ function Resume() {
     };
 
     return (
-        <div className="App min-h-screen bg-white flex flex-col items-center p-4 md:p-8">
+        <>
+        <div className="App min-h-screen bg-gray-50 flex flex-col items-center p-4 md:p-8 mt-20">
         <div className="hero-overlay flex flex-col items-center justify-center text-center p-4 md:p-8 min-h-screen relative bg-white">
           {/* Background Effects */}
-          <div className="absolute inset-0 bg-white opacity-60 z-0"></div>
+          <div className="absolute inset-0 bg-gray-50 opacity-60 z-0"></div>
           <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/4 h-48 w-48 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 rounded-full bg-yellow-300 opacity-30 animate-pulse"></div>
       
           <h1 className="text-gray-800 text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 z-10 transform transition-transform duration-300 hover:scale-105 shadow-lg">
@@ -81,7 +83,7 @@ function Resume() {
           </p>
         </div>
       
-        <div className="max-w-4xl w-full mx-auto p-6 md:p-8 bg-white shadow-lg rounded-lg border border-gray-200 relative z-10 overflow-hidden mt-10">
+        <div className="max-w-5xl w-full  mx-auto p-6 md:p-8 bg-[#45b2b4] shadow-lg rounded-lg border border-gray-200 relative z-10 overflow-hidden mt-0">
           {/* Decorative Element */}
 
       
@@ -97,12 +99,12 @@ function Resume() {
             type="file"
             accept=".pdf"
             onChange={onFileChange}
-            className="mb-5 p-4 border-2 border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all w-full bg-gray-100 hover:bg-gray-200"
+            className="mb-5 p-4 border-2 border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#358d8a] transition-all w-full bg-gray-100 hover:bg-gray-200"
           />
       
           <button
             onClick={onFileUpload}
-            className="w-full bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-transform duration-300 hover:bg-purple-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-full bg-[#48CFCB] text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-transform duration-300 hover:bg-[#42b4b0] hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500"
           >
             Upload and Extract Skills
           </button>
@@ -115,7 +117,7 @@ function Resume() {
                 <LoadingResume />
             ) : (
                 <div className="mt-8 md:mt-10 w-full max-w-full md:max-w-7xl">
-                    <h2 className="text-xl md:text-2xl font-bold text-indigo-600 mb-3 md:mb-4 text-center md:text-left">Extracted Skills:</h2>
+                    <h2 className="text-xl md:text-2xl font-bold text-[#1679AB] mb-3 md:mb-4 text-center md:text-left">Extracted Skills:</h2>
                     <pre className="bg-white p-4 md:p-5 rounded-lg shadow-md text-gray-900 border border-indigo-300 font-mono text-sm md:text-base lg:text-lg leading-relaxed overflow-x-auto">
                         {skills || 'No skills extracted.'}
                     </pre>
@@ -144,12 +146,46 @@ function Resume() {
                             ))}
                         </div>
                     ) : (
-                        <p className="mt-4 md:mt-6 text-gray-700 text-sm md:text-lg text-center md:text-left">No questions available.</p>
+                        <p className="mt-4 md:mt-6 text-gray-700 text-sm md:text-lg text-center md:text-left">Your Questions, Answers and Tips are generated here...</p>
                     )}
                 </div>
+
             )}
+
+
+            
         </div>
+
+        
+     {/* Call to Action Section */}
+<section className="relative py-16 bg-gradient-to-r from-purple-600 to-indigo-500 text-white text-center">
+  {/* Top Wave */}
+  <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none transform translate-y-[-1px]">
+    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" className="fill-current text-indigo-500">
+      <path d="M0 0L1200 0V36C1054.64 83.36 904.63 110.1 748.21 110.1C476.39 110.1 236.12 16.72 0 0Z" />
+    </svg>
+  </div>
+
+  <div className="container mx-auto px-4 relative z-10">
+    <h2 className="text-4xl font-extrabold mb-4">Get Started Today</h2>
+    <p className="text-xl font-light mb-8">
+      Whether it's a new job or a promotion, we’re here to help you succeed. Start preparing with personalized questions now.
+    </p>
+    <Link to="/resume" className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
+      Upload Your Resume
+    </Link>
+  </div>
+
+  {/* Bottom Wave */}
+  <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none transform translate-y-[1px]">
+    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" className="fill-current text-indigo-500">
+      <path d="M0 0L1200 0V36C1054.64 83.36 904.63 110.1 748.21 110.1C476.39 110.1 236.12 16.72 0 0Z" />
+    </svg>
+  </div>
+</section>
+</>
     );
 }
+
 
 export default Resume;

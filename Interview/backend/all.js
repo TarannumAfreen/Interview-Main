@@ -9,7 +9,7 @@ const router = express.Router();
 const genAI = new GoogleGenerativeAI("AIzaSyB-GRBEsB4XCpUaJTt1-lQwGYZvZIyRV-M");
 
 // Route for generating interview questions based on skills entered by the user
-router.post("/generate-questions", async (req, res) => {
+router.post("/generate-all-questions", async (req, res) => {
   const { skills } = req.body;
 
   if (!skills || !Array.isArray(skills) || skills.length === 0) {

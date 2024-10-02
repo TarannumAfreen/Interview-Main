@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-purple-600 to-indigo-700 text-white h-[600px] flex items-center justify-center overflow-hidden">
-  <div className="absolute inset-0 opacity-60 bg-gradient-to-br from-purple-800 to-indigo-800"></div> {/* Overlay */}
+      <section className="relative bg-gradient-to-r bg-[#3da5d9] text-white h-[600px] flex items-center justify-center overflow-hidden">
+  <div className="absolute inset-0 opacity-60 bg-gradient-to-br bg-[#9fb6c3]"></div> {/* Overlay */}
   
   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden">
     <svg
@@ -26,14 +26,14 @@ const Home = () => {
 
   <div className="container mx-auto px-4 text-center relative z-10 space-y-6">
     <h1 className="text-3xl md:text-5xl font-extrabold leading-tight ">
-      Master Your <span className="text-yellow-400">Interviews</span> with <span className="text-yellow-400">AI-Powered</span> Preparation
+      Master Your <span className="text-[#093a3e]">Interviews</span> with <span className="text-[#093a3e]">AI-Powered</span> Preparation
     </h1>
     <p className="text-lg md:text-xl font-light max-w-lg mx-auto">
       Upload your resume and generate personalized interview questions based on your skills or enter a topic to generate relevant Q&A.
     </p>
     
     <div className="space-x-4">
-      <button className="bg-gradient-to-br from-green-500 to-green-600 text-white py-2 md:py-4 px-4 md:px-8 rounded-full shadow-lg transform transition-transform hover:scale-110">
+      <button className="bg-gradient-to-br bg-[#3B429F] text-white py-2 md:py-4 px-4 md:px-8 rounded-full shadow-lg transform transition-transform hover:scale-110">
         <i className="fas fa-upload mr-2"></i> {/* Upload Icon */}
         Upload Your Resume
       </button>
@@ -50,35 +50,35 @@ const Home = () => {
 
   <HomeCarousel/>
 {/* How It Works Section */}
-<section className="py-16 bg-gray-50">
+<section className="py-16 bg-gradient-to-b bg-[#F5D7E3]">
   <div className="container mx-auto px-4 text-center">
-    <h2 className="text-4xl font-extrabold mb-6 text-gray-800">How It Works</h2>
-    <p className="text-lg font-light text-gray-600 mb-12">
+    <h2 className="text-4xl font-extrabold mb-6 text-red-950">How It Works</h2>
+    <p className="text-lg font-light text-gray-900 mb-12">
       Our platform uses AI to provide tailored interview questions and expert insights based on your resume or specific topics.
     </p>
 
     {/* Curved Cards with New Colors */}
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Card 1 */}
-      <div className="relative bg-gradient-to-r from-blue-100 to-white p-8 rounded-tl-[60px] rounded-br-[60px] shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r from-blue-200 to-white">
-        <h3 className="text-2xl font-bold text-blue-600 mb-4">Upload Your Resume</h3>
-        <p className="text-gray-700">
+      <div className="relative bg-gradient-to-r from-[#A3C1DA] to-[#F0F8FF] p-8 rounded-tl-[60px] rounded-br-[60px] shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r from-[#B7E4F7] to-[#F0F8FF]">
+        <h3 className="text-2xl font-bold text-[#2B7A92] mb-4">Upload Your Resume</h3>
+        <p className="text-gray-800">
           Simply upload your resume, and our system will extract your skills and generate relevant questions to help you prepare.
         </p>
       </div>
 
       {/* Card 2 */}
-      <div className="relative bg-gradient-to-r from-green-100 to-white p-8 rounded-tl-[60px] rounded-br-[60px] shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r from-green-200 to-white">
-        <h3 className="text-2xl font-bold text-green-600 mb-4">Enter a Topic</h3>
-        <p className="text-gray-700">
+      <div className="relative bg-gradient-to-r from-[#B4E4B9] to-[#F0F8FF] p-8 rounded-tl-[60px] rounded-br-[60px] shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r from-[#C3E9C4] to-[#F0F8FF]">
+        <h3 className="text-2xl font-bold text-[#3A7B3B] mb-4">Enter a Topic</h3>
+        <p className="text-gray-800">
           Choose any topic, and our AI will generate comprehensive questions and answers to help you master it.
         </p>
       </div>
 
       {/* Card 3 */}
-      <div className="relative bg-gradient-to-r from-pink-100 to-white p-8 rounded-tl-[60px] rounded-br-[60px] shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r from-pink-200 to-white">
-        <h3 className="text-2xl font-bold text-pink-600 mb-4">Get Expert Insights</h3>
-        <p className="text-gray-700">
+      <div className="relative bg-gradient-to-r from-[#F7C6D7] to-[#F0F8FF] p-8 rounded-tl-[60px] rounded-br-[60px] shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl hover:bg-gradient-to-r from-[#F8D3DF] to-[#F0F8FF]">
+        <h3 className="text-2xl font-bold text-[#B2325D] mb-4">Get Expert Insights</h3>
+        <p className="text-gray-800">
           Along with personalized questions, we provide tips and insights from industry experts on how to answer them effectively.
         </p>
       </div>
@@ -91,8 +91,8 @@ const Home = () => {
 {/* Testimonials Section */}
 <section className="py-16 bg-white">
   <div className="container mx-auto px-4 text-center">
-    <h2 className="text-4xl font-extrabold mb-6 text-indigo-800">What Our Users Say</h2>
-    <p className="text-lg font-light text-gray-600 mb-12">
+    <h2 className="text-4xl font-extrabold mb-6 text-[#F5D7E3]">What Our Users Say</h2>
+    <p className="text-lg font-light text-[#101010] mb-12">
       Thousands of users have aced their interviews with our AI-driven platform. Here’s what they say:
     </p>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -182,9 +182,9 @@ const Home = () => {
     <p className="text-xl font-light mb-8">
       Whether it's a new job or a promotion, we’re here to help you succeed. Start preparing with personalized questions now.
     </p>
-    <button className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
+    <Link to="/resume" className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
       Upload Your Resume
-    </button>
+    </Link>
   </div>
 
   {/* Bottom Wave */}

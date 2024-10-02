@@ -12,7 +12,7 @@ const HomeCarousel = () => {
   // Manually define each image item instead of using map
   const items = [
     <div className="carousel-item relative" key={1}>
-  <div className="relative flex justify-center items-center bg-white h-[250px] md:h-[250px] lg:h-[400px] w-full ">
+  <div className="relative flex justify-center items-center bg-[#fbf5f3] h-[250px] md:h-[250px] lg:h-[400px] min-w-8xl ">
     <img
       src={image1}
       alt="Slide 1"
@@ -21,7 +21,7 @@ const HomeCarousel = () => {
   </div>
 </div>,
 <div className="carousel-item relative" key={2}>
-  <div className="relative flex justify-center items-center bg-white h-[250px] md:h-[300px] lg:h-[400px] w-full">
+  <div className="relative flex justify-center items-center bg-[#fbf5f3] h-[250px] md:h-[300px] lg:h-[400px] w-full">
     <img
       src={image2}
       alt="Slide 2"
@@ -30,7 +30,7 @@ const HomeCarousel = () => {
   </div>
 </div>,
 <div className="carousel-item relative" key={3}>
-  <div className="relative flex justify-center items-center bg-white h-[250px] md:h-[300px] lg:h-[400px] w-full">
+  <div className="relative flex justify-center items-center bg-[#fbf5f3] h-[250px] md:h-[300px] lg:h-[400px] w-full">
     <img
       src={image3}
       alt="Slide 3"
@@ -39,7 +39,7 @@ const HomeCarousel = () => {
   </div>
 </div>,
 <div className="carousel-item relative" key={4}>
-  <div className="relative flex justify-center items-center bg-white h-[250px] md:h-[300px] lg:h-[400px] w-full">
+  <div className="relative flex justify-center items-center bg-[#fbf5f3] h-[250px] md:h-[300px] lg:h-[400px] w-full">
     <img
       src={image4}
       alt="Slide 4"
@@ -48,7 +48,7 @@ const HomeCarousel = () => {
   </div>
 </div>,
 <div className="carousel-item relative" key={5}>
-  <div className="relative flex justify-center items-center bg-white h-[250px] md:h-[300px] lg:h-[400px] w-full">
+  <div className="relative flex justify-center items-center bg-[#fbf5f3] h-[250px] md:h-[300px] lg:h-[400px] w-full">
     <img
       src={image5}
       alt="Slide 5"
@@ -60,7 +60,7 @@ const HomeCarousel = () => {
   ];
 
   return (
-    <div className="carousel-container bg-white p-4 max-w-6xl mx-auto">
+    <div className="carousel-container bg-[#fbf5f3] p-4 max-w-8xl mx-auto">
       <AliceCarousel
         mouseTracking
         items={items}

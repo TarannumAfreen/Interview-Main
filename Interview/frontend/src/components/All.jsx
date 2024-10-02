@@ -1,6 +1,4 @@
 
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { FaQuestionCircle } from 'react-icons/fa'; // Importing an icon for questions
@@ -8,7 +6,7 @@ import { FaCode } from 'react-icons/fa'; // Importing a code icon for design
 import '../index.css'
 import { Link } from 'react-router-dom';
 
-function DSA() {
+function All() {
     const [skills, setSkills] = useState('');
     const [questions, setQuestions] = useState(null);
     const [error, setError] = useState('');
@@ -26,7 +24,7 @@ function DSA() {
         setError('');
 
         try {
-            const response = await axios.post('http://localhost:5000/dsa/generate-questions', {
+            const response = await axios.post('http://localhost:5000/all/generate-all-questions', {
                 skills: skillsArray
             });
             setQuestions(response.data.questions);
@@ -48,27 +46,27 @@ function DSA() {
     };
 
     return (
-        <>
+      <>
         <div className="relative bg-white min-h-screen flex flex-col items-center justify-start py-10  w-6xl">
             {/* Generate Questions Section */}
 
             <div className="relative w-full flex flex-col items-center p-8 bg-white rounded-lg shadow-2xl  overflow-hidden mt-20 transition-transform duration-500 hover:shadow-xl transform hover:-translate-y-2">
     {/* Decorative Background Element */}
-    <div className="absolute inset-0 transform -rotate-6 bg-gradient-to-br from-pink-400 to-purple-500 opacity-30 rounded-lg"></div>
+    <div className="absolute inset-0 transform -rotate-6 bg-gradient-to-br from-blue-400 to-pink-500 opacity-30 rounded-lg"></div>
     
     {/* Title */}
     <h1 className="text-gray-900 text-4xl font-extrabold mb-4 z-10 text-center">
-        Master Data Structures & Algorithms!
+    Enter any topic and unlock tailored questions, answers, and personalized tips to help you ace your next interview with confidence!
     </h1>
 
     {/* Subtitle */}
     <p className="text-gray-700 text-lg sm:text-xl md:text-2xl font-semibold max-w-md z-10 text-center mb-6">
-    Unleash Your Coding Brilliance with Specialized DSA Content!
+    You can ace any interview on any topic with the right mindset, preparation, and a willingness to learn.
     </p>
 
     {/* Call to Action Button */}
     <p className="px-10 py-4 text-gray-900 font-bold rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-100 hover:shadow-xl font-serif">
-    Type your desired DSA topic below, and let us generate customized questions just for you!
+    Prepare confidently and master your interview with our tailored resources at your fingertips!
     </p>
 </div>
 
@@ -149,7 +147,6 @@ function DSA() {
 
 
 
-
             </div>
 
             
@@ -167,9 +164,9 @@ function DSA() {
        <p className="text-xl font-light mb-8">
          Whether it's a new job or a promotion, we’re here to help you succeed. Start preparing with personalized questions now.
        </p>
-       <Link to="/resume" className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
-      Upload Your Resume
-    </Link>
+       <Link to='/resume' className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
+         Upload Your Resume
+       </Link>
      </div>
    
      {/* Bottom Wave */}
@@ -179,9 +176,9 @@ function DSA() {
        </svg>
      </div>
    </section>
-   </>
+</>   
       
     );
 }
 
-export default DSA;
+export default All;

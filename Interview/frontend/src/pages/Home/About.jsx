@@ -6,7 +6,7 @@ import image from '../../assets/images/sample interview.png';
 const About = () => {
   return (
     <>
-      <div className='bg-gray-300 min-h-screen flex flex-col justify-center items-center pr-5 md:pr-20'>
+      <div className='bg-[#e9f5db] min-h-screen flex flex-col justify-center items-center pr-5 md:pr-20'>
         <div className='flex flex-col items-start px-4 md:px-20 lg:px-80'>
           <h1 className='font-serif text-3xl md:text-4xl lg:text-5xl pt-10'>About Interview Prep</h1>
           <p className='pb-10 text-lg md:text-xl lg:text-2xl pt-4 text-start font-serif'>
@@ -21,7 +21,7 @@ const About = () => {
           </div>
 
           <div className='flex flex-col items-start md:items-start  w-full md:w-2/4 '>
-            <p className='text-lg md:text-xl lg:text-2xl text-start '>
+            <p className='text-lg md:text-xl lg:text-2xl text-start font-serif'>
               At Interview Prep, we are dedicated to providing a clean and user-friendly interface that prioritizes user experience and visual appeal. Our focus on innovation and customization ensures that each user receives a unique and effective interview preparation experience. Ready to boost your interview performance? Join Interview Prep today!
             </p>
             <button className='border border-blue-950 bg-blue-950 text-white py-2 px-5 mt-4'>
