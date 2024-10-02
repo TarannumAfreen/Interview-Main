@@ -11,6 +11,8 @@ import Code from './components/Code';
 import CodeEditor from './components/CodeEditor';
 import All from './components/All';
 import Contact from './components/Contact';
+import Signup from './components/Signup';
+import Login from './components/Login';
 
 
 const App = () => {
@@ -23,12 +25,11 @@ const App = () => {
         <Route path="/resume" element={<Resume />} />
         <Route path="/dsa" element={<DSA />} />
         <Route path="/code" element={<Code/>}/>
-           
-    
-        
         <Route path="/all" element={<All />} />
         <Route path='/editor' element={<CodeEditor/>}/>
         <Route path="/contact" element={<Contact />} />
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/signin' element={<Login/>}/>
       </Routes>
     </Router>
   );
