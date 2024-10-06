@@ -77,13 +77,13 @@ const Header = () => {
           </Link>
           <Link
             to="/contact"
-            className="relative text-white hover:text-yellow-300 transition duration-300 group bg-green-500 px-4 py-2 rounded-full"
+            className="relative text-white hover:text-yellow-300 transition duration-300 group bg-[#72A0C1] px-4 py-2 rounded-full"
           >
             Contact Us
           </Link>
           <Link
             to="/signup"
-            className="relative text-white hover:text-black transition duration-300 group bg-pink-500 px-4 py-2 rounded-full"
+            className="relative text-white hover:text-black transition duration-300 group bg-[#72A0C1] px-4 py-2 rounded-full"
           >
            Signup   </Link>
           {/* <Link
@@ -171,7 +171,7 @@ const Header = () => {
 
           <Link
             to="/signup"
-            className="relative text-white hover:text-yellow-300 transition duration-300 group bg-green-500 px-4 py-2 rounded-full"
+            className="relative text-white hover:text-yellow-300 transition duration-300 group bg-[#D8BFD8] px-4 py-2 rounded-full"
           >
            Signup   </Link>
           {/* <Link

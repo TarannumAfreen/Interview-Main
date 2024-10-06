@@ -50,7 +50,7 @@ const Home = () => {
 
   <HomeCarousel/>
 {/* How It Works Section */}
-<section className="py-16 bg-gradient-to-b bg-[#F5D7E3]">
+<section className="py-16 bg-gradient-to-b bg-[#B9D9EB]">
   <div className="container mx-auto px-4 text-center">
     <h2 className="text-4xl font-extrabold mb-6 text-red-950">How It Works</h2>
     <p className="text-lg font-light text-gray-900 mb-12">
@@ -91,7 +91,7 @@ const Home = () => {
 {/* Testimonials Section */}
 <section className="py-16 bg-white">
   <div className="container mx-auto px-4 text-center">
-    <h2 className="text-4xl font-extrabold mb-6 text-[#F5D7E3]">What Our Users Say</h2>
+    <h2 className="text-4xl font-extrabold mb-6 text-[#452c63]">What Our Users Say</h2>
     <p className="text-lg font-light text-[#101010] mb-12">
       Thousands of users have aced their interviews with our AI-driven platform. Here’s what they say:
     </p>
@@ -169,7 +169,7 @@ const Home = () => {
 
 
      {/* Call to Action Section */}
-<section className="relative py-16 bg-gradient-to-r from-purple-600 to-indigo-500 text-white text-center">
+<section className="relative py-16 bg-gradient-to-r from-blue-900 to-indigo-500 text-white text-center">
   {/* Top Wave */}
   <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none transform translate-y-[-1px]">
     <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" className="fill-current text-indigo-500">
@@ -182,7 +182,7 @@ const Home = () => {
     <p className="text-xl font-light mb-8">
       Whether it's a new job or a promotion, we’re here to help you succeed. Start preparing with personalized questions now.
     </p>
-    <Link to="/resume" className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
+    <Link to="/resume" className="bg-gradient-to-br from-purple-900 to-blue-400 hover:from-indigo-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
       Upload Your Resume
     </Link>
   </div>

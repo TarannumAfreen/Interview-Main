@@ -167,7 +167,7 @@ function DSA() {
        <p className="text-xl font-light mb-8">
          Whether it's a new job or a promotion, we’re here to help you succeed. Start preparing with personalized questions now.
        </p>
-       <Link to="/resume" className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
+       <Link to="/resume" className="bg-gradient-to-br from-purple-900 to-blue-700 hover:from-indigo-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
       Upload Your Resume
     </Link>
      </div>
