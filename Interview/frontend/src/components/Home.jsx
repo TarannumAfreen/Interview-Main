@@ -89,7 +89,7 @@ const Home = () => {
 <About/>
 
 {/* Testimonials Section */}
-<section className="py-16 bg-white">
+<section className="py-16 bg-white hover:cursor-pointer">
   <div className="container mx-auto px-4 text-center">
     <h2 className="text-4xl font-extrabold mb-6 text-[#452c63]">What Our Users Say</h2>
     <p className="text-lg font-light text-[#101010] mb-12">
@@ -97,7 +97,7 @@ const Home = () => {
     </p>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {/* Testimonial Card 1 */}
-      <div className="relative p-8 bg-gradient-to-br from-purple-300 to-indigo-400 rounded-[30px] shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
+      <div className="relative p-8 bg-gradient-to-br from-purple-300 to-indigo-300 rounded-[30px] shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
         <div className="absolute top-4 right-4 text-white text-3xl">
           <i className="fas fa-quote-right"></i> {/* Font Awesome Icon */}
         </div>
@@ -107,7 +107,7 @@ const Home = () => {
         <h4 className="text-lg font-bold mt-4 text-yellow-200">- Sarah, Software Developer</h4>
       </div>
       {/* Testimonial Card 2 */}
-      <div className="relative p-8 bg-gradient-to-br from-green-300 to-teal-400 rounded-[30px] shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
+      <div className="relative p-8 bg-gradient-to-br from-green-300 to-teal-300 rounded-[30px] shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
         <div className="absolute top-4 right-4 text-white text-3xl">
           <i className="fas fa-quote-right"></i>
         </div>
@@ -117,7 +117,7 @@ const Home = () => {
         <h4 className="text-lg font-bold mt-4 text-yellow-200">- John, Data Scientist</h4>
       </div>
       {/* Testimonial Card 3 */}
-      <div className="relative p-8 bg-gradient-to-br from-pink-300 to-red-400 rounded-[30px] shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
+      <div className="relative p-8 bg-gradient-to-br from-pink-300 to-red-300 rounded-[30px] shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl duration-300">
         <div className="absolute top-4 right-4 text-white text-3xl">
           <i className="fas fa-quote-right"></i>
         </div>
@@ -135,37 +135,35 @@ const Home = () => {
 {/* Side Image */}
 
 
+<div className="flex flex-col lg:flex-row items-center lg:justify-between mx-4 lg:mx-20 mt-16 lg:mt-32 space-y-10 lg:space-y-0">
+  {/* Image Section */}
+  <div className="w-full lg:w-1/2 mb-6 lg:mb-0">
+    <img src={sideImage} className="w-full h-auto" alt="Resume Preview" />
+  </div>
 
-<div className="flex flex-col lg:flex-row items-center lg:justify-between mx-4 lg:mx-20 mt-32">
-      {/* Image Section */}
-      <div className="w-full lg:w-1/2 mb-10 lg:mb-0">
-        <img src={sideImage} className="w-full h-auto" alt="Resume Preview" />
-      </div>
-
-      {/* Text Section */}
-      <div className="w-full lg:w-1/2 lg:ml-10">
-        <div className="font-serif font-semibold text-2xl text-center lg:text-left">
-          Unlock Your Interview
-        </div>
-
-        <p className="mt-6 lg:mt-10 font-sans text-base text-center lg:text-left">
-          Prepare for your next big interview with our cutting-edge platform. Simply upload your resume, and our AI-powered tool will analyze your skills. Click the buttons below to get started.
-        </p>
-
-        <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-start space-y-4 lg:space-y-0 lg:space-x-4 mt-8">
-          {/* Get Started Button */}
-          <button className="border border-gray-500 text-gray-500 w-full lg:w-auto px-12 py-3 rounded">
-            Get Started
-          </button>
-
-          {/* Upload Resume Button */}
-          <Link to='/resume' className="border border-r-blue-950 bg-blue-950 text-white w-full lg:w-auto rounded px-10 py-3">
-            Upload Resume
-          </Link>
-        </div>
-      </div>
+  {/* Text Section */}
+  <div className="w-full lg:w-1/2 lg:ml-10">
+    <div className="font-serif font-semibold text-2xl md:text-3xl lg:text-4xl text-center lg:text-left">
+      Unlock Your Interview
     </div>
 
+    <p className="mt-4 lg:mt-8 text-sm md:text-base lg:text-lg font-sans text-center lg:text-left">
+      Prepare for your next big interview with our cutting-edge platform. Simply upload your resume, and our AI-powered tool will analyze your skills. Click the buttons below to get started.
+    </p>
+
+    <div className="flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-start space-y-4 lg:space-y-0 lg:space-x-4 mt-6 lg:mt-10">
+      {/* Get Started Button */}
+      <button className="border border-gray-500 text-gray-500 w-full lg:w-auto px-8 py-3 rounded hover:bg-gray-500 hover:text-white transition-colors">
+        Get Started
+      </button>
+
+      {/* Upload Resume Button */}
+      <Link to="/resume" className="border border-blue-950 bg-blue-950 text-white w-full lg:w-auto rounded px-8 py-3 hover:bg-blue-800 transition-colors">
+        Upload Resume
+      </Link>
+    </div>
+  </div>
+</div>
 
 
      {/* Call to Action Section */}
@@ -182,7 +180,7 @@ const Home = () => {
     <p className="text-xl font-light mb-8">
       Whether it's a new job or a promotion, we’re here to help you succeed. Start preparing with personalized questions now.
     </p>
-    <Link to="/resume" className="bg-gradient-to-br from-purple-900 to-blue-400 hover:from-indigo-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
+    <Link to="/resume" className="bg-gradient-to-br from-purple-900 to-blue-400 hover:from-indigo-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out ">
       Upload Your Resume
     </Link>
   </div>

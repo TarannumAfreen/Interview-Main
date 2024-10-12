@@ -9,7 +9,6 @@ const register = async (req, res) => {
 
     return res.status(200).send({ jwt, message: "register success" });
   } catch (error) {
-    console.error(`Inside authController -- regsiter Method`, error);
     return res.status(500).send({ error: error.message });
   }
 };

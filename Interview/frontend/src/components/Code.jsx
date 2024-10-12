@@ -6,6 +6,7 @@ import axios from 'axios';
 import { FaCode } from 'react-icons/fa'; // Importing a code icon for design
 import '../index.css'
 import { Link } from 'react-router-dom';
+import LoadingResume from '../pages/LoadingResume';
 
 function Code() {
     const [skills, setSkills] = useState('');
@@ -41,38 +42,38 @@ function Code() {
     return (
 
       <>
-        <div className="relative bg-white min-h-screen flex flex-col items-center justify-start py-10 w-6xl">
-            {/* Input and Button Section */}
-            <div className="relative w-full flex flex-col items-center p-8 bg-gradient-to-r from-teal-400 to-blue-400 rounded-lg shadow-2xl overflow-hidden mt-20 clip-path-custom">
+       <div className="relative bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300 min-h-screen flex flex-col items-center justify-start py-10">
+  {/* Input and Button Section */}
+  <div className="relative w-full max-w-3xl flex flex-col items-center p-10 bg-white bg-opacity-70 backdrop-blur-md rounded-xl shadow-lg mt-20 clip-path-custom">
+
     {/* Blob Top Left */}
-    <div className="absolute top-0 left-0">
-        <svg className="h-64 w-64 text-white opacity-30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="currentColor" d="M54.9,-51.2C69.5,-36.4,76.9,-18.2,76.8,0.3C76.7,18.7,69,37.4,54.4,50.9C39.7,64.5,18.1,72.9,-0.6,73.5C-19.3,74.1,-38.5,66.9,-53,54.5C-67.4,42,-77.1,24.4,-76.3,7C-75.4,-10.4,-64.1,-26.7,-50,-41C-35.9,-55.2,-18,-67.3,0.7,-67.5C19.5,-67.7,39,-55.9,54.9,-51.2Z" transform="translate(100 100)" />
-        </svg>
+    <div className="absolute top-0 left-0 -z-10">
+      <svg className="h-64 w-64 text-gray-400 opacity-40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M37.5,-56.7C50.3,-51.2,59.8,-41,66.5,-28.7C73.2,-16.4,77.1,-2.1,74.5,11.7C71.9,25.4,62.8,38.7,51.1,47.2C39.5,55.7,25.3,59.4,9.4,61.2C-6.4,63.1,-23.2,63,-32.4,54.7C-41.7,46.3,-43.4,29.8,-50.5,14.9C-57.6,0,-70.1,-13.3,-70.9,-26.1C-71.7,-39,-60.9,-51.4,-47.5,-56.4C-34.1,-61.3,-17.1,-58.7,-0.1,-58.6C17,-58.5,34,-61.2,37.5,-56.7Z" transform="translate(100 100)" />
+      </svg>
     </div>
 
     {/* Content Section */}
     <div className="relative z-10 w-full text-center">
-        <h1 className="text-white text-3xl sm:text-4xl md:text-4xl font-extrabold mb-4 animate-fadeInDown">
-        Master Your Coding Skills: Elevate Your Career and Become a Developer of Tomorrow!
-        </h1>
-        <p className="text-white text-lg sm:text-xl md:text-2xl font-semibold mb-6 animate-fadeInUp">
-        Just specify your programming language and the code you need, and let the magic happen!
-        </p>
-        <button 
-            className="bg-white text-blue-400 font-bold py-2 px-6 rounded-lg shadow-lg hover:bg-blue-200 font-serif transition duration-300 transform hover:scale-105 focus:outline-none animate-bounce"
-        >
-            Start <span className='text-teal-400'>Coding</span>
-        </button>
+      <h1 className="text-gray-900 text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight">
+        Accelerate Your Coding Journey
+      </h1>
+      <p className="text-gray-600 text-lg sm:text-xl font-medium mb-8">
+        Ready to take your skills to the next level? Choose your language, enter your code, and let the magic begin!
+      </p>
+      <button className="bg-gradient-to-r from-indigo-500 to-teal-400 text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105">
+        Start Now
+      </button>
     </div>
 
-    {/* Blob Top Right */}
-    <div className="absolute top-0 right-0">
-        <svg className="h-64 w-64 text-white opacity-30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <path fill="currentColor" d="M54.9,-51.2C69.5,-36.4,76.9,-18.2,76.8,0.3C76.7,18.7,69,37.4,54.4,50.9C39.7,64.5,18.1,72.9,-0.6,73.5C-19.3,74.1,-38.5,66.9,-53,54.5C-67.4,42,-77.1,24.4,-76.3,7C-75.4,-10.4,-64.1,-26.7,-50,-41C-35.9,-55.2,-18,-67.3,0.7,-67.5C19.5,-67.7,39,-55.9,54.9,-51.2Z" transform="translate(100 100)" />
-        </svg>
+    {/* Blob Bottom Right */}
+    <div className="absolute bottom-0 right-0 -z-10">
+      <svg className="h-64 w-64 text-gray-400 opacity-40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="currentColor" d="M48.6,-45.5C61.4,-31.6,68.8,-15.8,68.8,-0.5C68.9,14.8,61.6,29.6,49.9,43.8C38.1,58.1,22,71.9,3.2,72.8C-15.7,73.8,-31.4,61.9,-46,48.2C-60.6,34.5,-74.1,18.9,-74.1,2.9C-74,-13,-60.4,-25.9,-47,-39.1C-33.7,-52.3,-20.7,-65.8,-6.5,-66.2C7.7,-66.7,15.5,-54.1,48.6,-45.5Z" transform="translate(100 100)" />
+      </svg>
     </div>
-</div>
+  </div>
+
 
 
 
@@ -101,7 +102,7 @@ function Code() {
            {/* Generated Code Section */}
 <div className="w-full max-w-8xl bg-gray-50 shadow-lg rounded-lg p-4 md:p-6 lg:p-8 mt-8 font-serif">
     {loading ? (
-        <p className="text-xl text-gray-700 text-center font-serif">Loading...</p>
+        <p className="text-xl text-gray-700 text-center font-serif"><LoadingResume/></p>
     ) : (
         <div id="resultContainer" className="space-y-8 font-serif">
             {generatedCode ? (

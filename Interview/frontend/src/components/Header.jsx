@@ -16,7 +16,7 @@ const Header = () => {
         {/* Logo Section */}
         <div className="flex items-center space-x-2">
           <div className="text-3xl font-extrabold tracking-wide">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r text-white">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r text-white font-signature">
               InterviewPrep
             </span>
           </div>
@@ -26,64 +26,70 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8 text-lg font-medium">
           <Link
             to="/"
-            className="relative text-white hover:text-black transition duration-300 group"
+            className="relative text-white hover:text-[#3A98B9] transition duration-300 group"
           >
             Home
-            <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute left-0 bottom-0 w-0 h-1 bg-[#3A98B9] group-hover:w-full transition-all duration-300"></span>
           </Link>
           <Link
             to="/about"
-            className="relative text-white hover:text-yellow-300 transition duration-300 group"
+            className="relative text-white hover:text-[#3A98B9] transition duration-300 group"
           >
             About Us
-            <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute left-0 bottom-0 w-0 h-1 bg-[#3A98B9] group-hover:w-full transition-all duration-300"></span>
           </Link>
           <Link
             to="/resume"
-            className="relative text-white hover:text-yellow-300 transition duration-300 group"
+            className="relative text-white hover:text-[#3A98B9] transition duration-300 group"
           >
             Resume
-            <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute left-0 bottom-0 w-0 h-1 bg-[#3A98B9] group-hover:w-full transition-all duration-300"></span>
           </Link>
           <Link
             to="/dsa"
-            className="relative text-white hover:text-yellow-300 transition duration-300 group"
+            className="relative text-white hover:text-[#3A98B9] transition duration-300 group"
           >
             DSA
-            <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
+            <span className="absolute left-0 bottom-0 w-0 h-1 bg-[#3A98B9] group-hover:w-full transition-all duration-300"></span>
           </Link>
           
           <Link
             to="/all"
-            className="relative text-white hover:text-yellow-300 transition duration-300 group"
+            className="relative text-white hover:text-[#3A98B9] transition duration-300 group"
           >
           All
-            <span className="absolute left-0 bottom-0 w-0 h-1 bg-yellow-300 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-          <Link
-            to="/code"
-            onClick={toggleMenu}
-            className="block text-lg hover:text-indigo-500 transition duration-300"
-          >
-            Code
+            <span className="absolute left-0 bottom-0 w-0 h-1 bg-[#3A98B9] group-hover:w-full transition-all duration-300"></span>
           </Link>
 
+            
+          <Link
+            to="/code"
+            className="relative text-white hover:text-[#3A98B9] transition duration-300 group"
+          >
+       Code
+            <span className="absolute left-0 bottom-0 w-0 h-1 bg-[#3A98B9] group-hover:w-full transition-all duration-300"></span>
+          </Link>
+         
+         
+
+          
           <Link
             to="/editor"
-            onClick={toggleMenu}
-            className="block text-lg hover:text-indigo-500 transition duration-300"
+            className="relative text-white hover:text-[#3A98B9] transition duration-300 group"
           >
          Code Editor
+            <span className="absolute left-0 bottom-0 w-0 h-1 bg-[#3A98B9] group-hover:w-full transition-all duration-300"></span>
           </Link>
+         
           <Link
             to="/contact"
-            className="relative text-white hover:text-yellow-300 transition duration-300 group bg-[#72A0C1] px-4 py-2 rounded-full"
+            className="relative text-white hover:text-[#144272] transition duration-300 group bg-[#72A0C1] px-4 py-2 rounded-full"
           >
             Contact Us
           </Link>
           <Link
             to="/signup"
-            className="relative text-white hover:text-black transition duration-300 group bg-[#72A0C1] px-4 py-2 rounded-full"
+            className="relative text-white hover:text-[#144272] transition duration-300 group bg-[#72A0C1] px-4 py-2 rounded-full"
           >
            Signup   </Link>
           {/* <Link

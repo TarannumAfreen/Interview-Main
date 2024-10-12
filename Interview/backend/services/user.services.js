@@ -1,26 +1,27 @@
-const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const User = require("../models/Users.model.js");
-const jwtProvider = require("../config/jwtProvider.js");
+
 const createUser = async (userData) => {
   try {
     console.log("Inside createUser Service");
-    let { firstName, lastName, email, password, role } = userData;
+    let { firstName, lastName, email, mobile, password } = userData;
 
+    // Check if the user already exists
     const isUserExist = await User.findOne({ email });
 
     if (isUserExist) {
       throw new Error("User already exists with email: " + email);
     }
 
+    // Hash the password before saving
     password = await bcrypt.hash(password, 8);
 
     const user = await User.create({
       firstName,
       lastName,
       email,
+      mobile,
       password,
-      role,
     });
 
     console.log("User created: ", user);
@@ -34,12 +35,15 @@ const createUser = async (userData) => {
 const findUserById = async (userId) => {
   try {
     const user = await User.findById(userId);
+
+    // Return null if user is not found
     if (!user) {
-      throw new Error("user not found with id : ", userId);
+      return null;
     }
+
     return user;
   } catch (error) {
-    console.log("error :------- ", error.message);
+    console.error("Error finding user by ID: ", error.message);
     throw new Error(error.message);
   }
 };
@@ -48,13 +52,14 @@ const getUserByEmail = async (email) => {
   try {
     const user = await User.findOne({ email });
 
+    // Return null if user is not found
     if (!user) {
-      throw new Error("user found with email : ", email);
+      return null;
     }
 
     return user;
   } catch (error) {
-    console.log("error - ", error.message);
+    console.error("Error finding user by email: ", error.message);
     throw new Error(error.message);
   }
 };
@@ -64,7 +69,7 @@ const getAllUsers = async () => {
     const users = await User.find();
     return users;
   } catch (error) {
-    console.log("error - ", error);
+    console.error("Error getting all users: ", error.message);
     throw new Error(error.message);
   }
 };
@@ -72,7 +77,6 @@ const getAllUsers = async () => {
 module.exports = {
   createUser,
   findUserById,
-
   getUserByEmail,
   getAllUsers,
 };

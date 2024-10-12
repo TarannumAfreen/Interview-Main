@@ -1,10 +1,11 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { FaQuestionCircle } from 'react-icons/fa'; // Importing an icon for questions
-import { FaCode } from 'react-icons/fa'; // Importing a code icon for design
+import { FaQuestionCircle } from 'react-icons/fa'; 
+import { FaCode } from 'react-icons/fa'; 
 import '../index.css'
 import { Link } from 'react-router-dom';
+import LoadingResume from '../pages/LoadingResume';
 
 function All() {
     const [skills, setSkills] = useState('');
@@ -72,24 +73,15 @@ function All() {
 
 
 
-
-
-
-
-
-
-            
-
-
 {/* Generate Questions Section */}
 <div className="relative z-10 w-full max-w-5xl bg-teal-500 shadow-2xl mt-20 rounded-lg p-8 mb-12 overflow-hidden after:-z-10 clip-path-custom">
-    <h1 className="text-4xl font-extrabold text-white text-center font-['italic'] mb-6">DSA Question Generator</h1>
+    <h1 className="text-4xl font-extrabold text-white text-center font-['italic'] mb-6">Custom Questions at Your Fingertips</h1>
 
     <input
         type='text'
         value={skills}
         onChange={(e) => setSkills(e.target.value)}
-        placeholder="Enter skills separated by commas (e.g., DSA Graphs, Linked Lists...)"
+        placeholder="Enter your desired topic..."
         className="w-full p-4 mb-4 border border-transparent rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-teal-400 transition duration-300 bg-white"
     />
 
@@ -108,11 +100,12 @@ function All() {
         clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 20%);
     }
 `}</style>
+
 {/* Generated Questions Section */}
-   {/* Generated Questions Section */}
+ 
 <div className="w-full max-w-8xl bg-gray-50 shadow-lg rounded-lg p-4 md:p-6 lg:p-8">
     {loading ? (
-        <p className="text-xl text-gray-700 text-center">Loading...</p>
+        <p className="text-xl text-gray-700 text-center"><LoadingResume/></p>
     ) : (
         <div id="resultContainer" className="space-y-8">
             {questions ? (
@@ -149,33 +142,35 @@ function All() {
 
             </div>
 
-            
+    
      {/* Call to Action Section */}
-     <section className="relative py-16 bg-gradient-to-r from-purple-600 to-indigo-500 text-white text-center">
-     {/* Top Wave */}
-     <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none transform translate-y-[-1px]">
-       <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" className="fill-current text-indigo-500">
-         <path d="M0 0L1200 0V36C1054.64 83.36 904.63 110.1 748.21 110.1C476.39 110.1 236.12 16.72 0 0Z" />
-       </svg>
-     </div>
+<section className="relative py-16 bg-gradient-to-r from-blue-900 to-indigo-500 text-white text-center">
+  {/* Top Wave */}
+  <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none transform translate-y-[-1px]">
+    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" className="fill-current text-indigo-500">
+      <path d="M0 0L1200 0V36C1054.64 83.36 904.63 110.1 748.21 110.1C476.39 110.1 236.12 16.72 0 0Z" />
+    </svg>
+  </div>
+
+  <div className="container mx-auto px-4 relative z-10">
+    <h2 className="text-4xl font-extrabold mb-4">Get Started Today</h2>
+    <p className="text-xl font-light mb-8">
+      Whether it's a new job or a promotion, we’re here to help you succeed. Start preparing with personalized questions now.
+    </p>
+    <Link to="/resume" className="bg-gradient-to-br from-purple-900 to-blue-400 hover:from-indigo-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
+      Upload Your Resume
+    </Link>
+  </div>
+
+  {/* Bottom Wave */}
+  <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none transform translate-y-[1px]">
+    <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" className="fill-current text-indigo-500">
+      <path d="M0 0L1200 0V36C1054.64 83.36 904.63 110.1 748.21 110.1C476.39 110.1 236.12 16.72 0 0Z" />
+    </svg>
+  </div>
+</section>
+
    
-     <div className="container mx-auto px-4 relative z-10">
-       <h2 className="text-4xl font-extrabold mb-4">Get Started Today</h2>
-       <p className="text-xl font-light mb-8">
-         Whether it's a new job or a promotion, we’re here to help you succeed. Start preparing with personalized questions now.
-       </p>
-       <Link to='/resume' className="bg-gradient-to-br from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white py-4 px-8 rounded-full shadow-lg transform hover:scale-110 transition duration-300 ease-in-out">
-         Upload Your Resume
-       </Link>
-     </div>
-   
-     {/* Bottom Wave */}
-     <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none transform translate-y-[1px]">
-       <svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" className="fill-current text-indigo-500">
-         <path d="M0 0L1200 0V36C1054.64 83.36 904.63 110.1 748.21 110.1C476.39 110.1 236.12 16.72 0 0Z" />
-       </svg>
-     </div>
-   </section>
 </>   
       
     );

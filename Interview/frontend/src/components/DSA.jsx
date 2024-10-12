@@ -7,6 +7,7 @@ import { FaQuestionCircle } from 'react-icons/fa'; // Importing an icon for ques
 import { FaCode } from 'react-icons/fa'; // Importing a code icon for design
 import '../index.css'
 import { Link } from 'react-router-dom';
+import LoadingResume from '../pages/LoadingResume';
 
 function DSA() {
     const [skills, setSkills] = useState('');
@@ -114,7 +115,7 @@ function DSA() {
    {/* Generated Questions Section */}
 <div className="w-full max-w-8xl bg-gray-50 shadow-lg rounded-lg p-4 md:p-6 lg:p-8">
     {loading ? (
-        <p className="text-xl text-gray-700 text-center">Loading...</p>
+        <p className="text-xl text-gray-700 text-center"><LoadingResume/></p>
     ) : (
         <div id="resultContainer" className="space-y-8">
             {questions ? (

@@ -9,6 +9,5 @@ async function connectoDB() {
     console.error(error);
   }
 }
-connectoDB();
 
 module.exports = connectoDB;
